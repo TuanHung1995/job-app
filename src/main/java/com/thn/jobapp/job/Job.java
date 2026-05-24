@@ -1,5 +1,6 @@
 package com.thn.jobapp.job;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,8 +10,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
+@Entity
+@Table(name = "jobs")
 public class Job {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
