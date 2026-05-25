@@ -6,3 +6,7 @@ spring:
   h2:
     console:
       enabled: true
+  jpa:
+    show: true
+    hibernate:
+      ddl-auto: create-drop
