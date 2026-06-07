@@ -6,8 +6,6 @@ import com.thn.jobapp.job.JobService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +14,7 @@ import java.util.Optional;
 public class JobServiceImpl implements JobService {
 
     private final JobRepository jobRepository;
-    private Long nextId = 1L;
+    private static Long nextId = 1L;
 
     @Override
     public List<Job> findAll() {

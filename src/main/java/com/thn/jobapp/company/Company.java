@@ -2,6 +2,7 @@ package com.thn.jobapp.company;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.thn.jobapp.job.Job;
+import com.thn.jobapp.review.Review;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,7 +26,12 @@ public class Company {
     private String description;
 
     @JsonIgnore
-    @OneToMany
+    @OneToMany(mappedBy = "company")
     private List<Job> jobs;
+
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "company")
+    private List<Review> reviews;
 
 }
